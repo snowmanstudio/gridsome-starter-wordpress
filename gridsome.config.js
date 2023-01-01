@@ -12,7 +12,8 @@ module.exports = {
     {
       use: '@gridsome/source-wordpress',
       options: {
-        baseUrl: 'https://freehub.online', // required
+        baseUrl: 'https://obbdownload.com', // required
+        apiBase: 'wp-json',
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
     }
