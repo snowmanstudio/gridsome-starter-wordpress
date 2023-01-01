@@ -12,7 +12,7 @@ module.exports = {
     {
       use: '@gridsome/source-wordpress',
       options: {
-        baseUrl: 'https://web.archive.org/web/20191122164409/http://happywishesbirthday.com', // required
+        baseUrl: 'https://freehub.online', // required
         apiBase: 'wp-json',
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
