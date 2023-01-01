@@ -12,7 +12,7 @@ module.exports = {
     {
       use: '@gridsome/source-wordpress',
       options: {
-        baseUrl: 'https://freehub.online', // required
+        baseUrl: 'https://sajidch.com', // required
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
     }
