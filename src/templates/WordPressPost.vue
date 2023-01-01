@@ -16,14 +16,6 @@
         </li>
       </ul>
     </template>
-    <template v-if="$page.wordPressPost.tags.length">
-      <h4>Tags</h4>
-      <ul class="list tags">
-        <li v-for="tag in $page.wordPressPost.tags" :key="tag.id" >
-          <g-link :to="tag.path">{{ tag.title }}</g-link>
-        </li>
-      </ul>
-    </template>
   </Layout>
 </template>
 
