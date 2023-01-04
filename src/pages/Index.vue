@@ -43,6 +43,7 @@ export default {
   }
 }
 </script>
+<style>
 .post-list {
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +64,5 @@ export default {
     width: 100%;
   }
 }
-
-<style>
 
 </style>
