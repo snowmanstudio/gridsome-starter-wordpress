@@ -16,6 +16,7 @@
         </li>
       </ul>
     </template>
+    <related-posts :categories="$page.wordPressPost.categories" :posts="$page.allWordPressPost.edges" />
   </Layout>
 </template>
 
@@ -37,11 +38,28 @@ query WordPressPost ($id: ID!) {
       path
     }
   }
+  allWordPressPost {
+    edges {
+      node {
+        id
+        title
+        path
+        categories {
+          id
+        }
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
+import RelatedPosts from './RelatedPosts.vue'
+
 export default {
+  components: {
+    RelatedPosts
+  },
   metaInfo () {
     return {
       title: this.$page.wordPressPost.title
