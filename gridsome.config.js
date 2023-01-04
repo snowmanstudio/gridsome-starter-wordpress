@@ -15,6 +15,25 @@ module.exports = {
         apiBase: 'wp-json',
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
+    },
+    {
+      use: "gridsome-plugin-recommender",
+      options: {
+        enabled: true,
+        typeName: 'WordPress',
+        referenceTypeName: 'Category',
+        field: 'title',
+        referenceField: 'title',
+        relatedFieldName: 'related',
+        referenceRelatedFieldName: 'related',
+        caseSensitive: false,
+        minScore: 0.01,
+        maxScore: 1,
+        minRelations:3,
+        maxRelations: 10,
+        fillWithRandom:false,
+        debug: false
+      }
     }
   ]
 }  
