@@ -43,3 +43,27 @@ export default {
   }
 }
 </script>
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -1rem;
+}
+
+.post-list li {
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .post-list li {
+    width: 100%;
+  }
+}
+
+<style>
+
+</style>
