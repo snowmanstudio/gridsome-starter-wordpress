@@ -16,7 +16,14 @@
         </li>
       </ul>
     </template>
-    <related-posts :categories="$page.wordPressPost.categories" :posts="$page.allWordPressPost.edges" />
+    <template v-if="$page.wordPressPost.tags.length">
+      <h4>Tags</h4>
+      <ul class="list tags">
+        <li v-for="tag in $page.wordPressPost.tags" :key="tag.id" >
+          <g-link :to="tag.path">{{ tag.title }}</g-link>
+        </li>
+      </ul>
+    </template>
   </Layout>
 </template>
 
@@ -37,29 +44,17 @@ query WordPressPost ($id: ID!) {
       title
       path
     }
-  }
-  allWordPressPost {
-    edges {
-      node {
-        id
-        title
-        path
-        categories {
-          id
-        }
-      }
+    tags {
+      id
+      title
+      path
     }
   }
 }
 </page-query>
 
 <script>
-import RelatedPosts from './RelatedPosts.vue'
-
 export default {
-  components: {
-    RelatedPosts
-  },
   metaInfo () {
     return {
       title: this.$page.wordPressPost.title
