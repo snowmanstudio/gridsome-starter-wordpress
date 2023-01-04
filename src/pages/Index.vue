@@ -57,6 +57,11 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  background-color: #e91e63; /* pink color */
+}
+
+.post-list li:hover {
+  background-color: #00bcd4; /* teal color */
 }
 
 @media (max-width: 600px) {
@@ -64,5 +69,6 @@ export default {
     width: 100%;
   }
 }
+
 
 </style>
