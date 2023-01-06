@@ -12,12 +12,12 @@ module.exports = {
     {
       use: '@gridsome/source-wordpress',
       options: {
-        baseUrl: 'https://directorycat.info', // required
+        baseUrl: 'https://freehub.online', // required
         apiBase: 'wp-json',
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
     },
-    {
+    { 
       use: 'gridsome-source-rest',
       options: {
         endpoint: 'https://directorycat.info/wp-json/wp/v2/posts',
