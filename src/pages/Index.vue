@@ -1,6 +1,9 @@
 <template>
   <Layout>
     <h1>Welcome to my blog :)</h1>
+    <i>
+      {{ $static.metadata.settings.metaField }}
+    </i>
     <ul class="post-list">
       <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
         <Post :post="node" />
@@ -10,6 +13,15 @@
   </Layout>
 </template>
 
+<static-query>
+  query{
+  metadata{
+  settings{
+  metaField
+  }
+  }
+  }
+  </static-query>
 <page-query>
 query Home ($page: Int) {
   allWordPressPost (page: $page, perPage: 10) @paginate {
