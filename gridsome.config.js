@@ -1,6 +1,5 @@
 module.exports = {
   siteName: 'Gridsome',
-  siteUrl: 'https://gridsome-starter-wordpress.pages.dev',
   siteDescription: 'A WordPress starter for Gridsome',
 
   templates: {

@@ -15,18 +15,16 @@
 </script>
 
 
-<page-query>
-  query {
-    allBlogPost {
-      edges {
-        node {
-          title
-          slug
-        }
+query BlogPost ($id: ID!) {
+  allBlogPost (id: $id) {
+    edges {
+      node {
+        title
+        slug
       }
     }
   }
-</page-query>
+}
     
     <style scoped>
     </style>
