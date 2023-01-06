@@ -8,9 +8,6 @@
       <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
         <Post :post="node" />
       </li>
-      <li v-for="post in $page.posts.edges">
-          <g-link :to="post.node.path">{{ post.node.title }}</g-link>
-        </li>
     </ul>
     <Pager :info="$page.allWordPressPost.pageInfo"/>
   </Layout>
@@ -56,11 +53,13 @@ title
 <script>
 import { Pager } from 'gridsome'
 import Post from '~/components/Post.vue'
+import Post from '~/components/Acf.vue'
 
 export default {
   components: {
     Pager,
-    Post
+    Post,
+    Posts
   },
   metaInfo: {
     title: 'Welcome to my blog :)'
