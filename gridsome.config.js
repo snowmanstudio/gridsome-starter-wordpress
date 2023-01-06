@@ -4,8 +4,8 @@ module.exports = {
 
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
-    WordPressPost: '/:title', // adds a route for the "post" post type (Optional)
-    BlogPost:'/:slug',
+    WordPressPost: '/:slug', // adds a route for the "post" post type (Optional)
+    BlogPost:'/:id',
   },
   plugins: [
     {
