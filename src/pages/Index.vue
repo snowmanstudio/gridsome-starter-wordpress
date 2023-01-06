@@ -1,9 +1,6 @@
 <template>
   <Layout>
     <h1>Welcome to my blog :)</h1>
-    <i>
-      {{ $static.metadata.settings.metaField }}
-    </i>
     <ul class="post-list">
       <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
         <Post :post="node" />
@@ -12,16 +9,6 @@
     <Pager :info="$page.allWordPressPost.pageInfo"/>
   </Layout>
 </template>
-
-<static-query>
-  query{
-  metadata{
-  settings{
-  metaField
-  }
-  }
-  }
-  </static-query>
 <page-query>
 query Home ($page: Int) {
   allWordPressPost (page: $page, perPage: 10) @paginate {
@@ -38,28 +25,17 @@ query Home ($page: Int) {
       }
     }
   }
-  posts:allBlogPost {
-edges {
-node {
-id
-path
-title
-}
-}
-}
 }
 </page-query>
 
 <script>
 import { Pager } from 'gridsome'
 import Post from '~/components/Post.vue'
-import Post from '~/components/Acf.vue'
 
 export default {
   components: {
     Pager,
-    Post,
-    Posts
+    Post
   },
   metaInfo: {
     title: 'Welcome to my blog :)'
