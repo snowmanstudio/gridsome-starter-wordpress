@@ -18,8 +18,6 @@
 <page-query>
     query Post ($path: String) {
     blogPost (path: $path) {
-    id
-    path
     title
     slug
     }
