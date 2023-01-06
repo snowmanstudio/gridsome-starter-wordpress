@@ -14,16 +14,18 @@
     }
 </script>
 
+
 <page-query>
-    query {
-      allBlogPost {
-        edges {
-          node {
-            id
-            title
-            content
-          }
-        }
-      }
+    query Post ($path: String) {
+    blogPost (path: $path) {
+    id
+    path
+    title
+    slug
     }
-</page-query>
+    }
+    
+    </page-query>
+    
+    <style scoped>
+    </style>
