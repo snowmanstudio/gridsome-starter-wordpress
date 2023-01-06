@@ -20,7 +20,7 @@ module.exports = {
     {
       use: 'gridsome-source-rest',
       options: {
-        endpoint: 'https://freehub.online/wp-json/wp/v2/posts',
+        endpoint: 'https://directorycat.info/wp-json/wp/v2/posts',
         typeName: 'BlogPost',
       }
     }
