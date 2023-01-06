@@ -5,7 +5,7 @@
         {{ $page.blogPost.acf.cat_name }}
       </div>
       <div style="padding-bottom: 20px;">
-            <g-link :to="category.slug">{{ $page.blogPost.acf.category.name }}</g-link>
+            <h3>{{ $page.blogPost.acf.category.name }}</h3>
       </div>
     </layout>
   </template>
@@ -24,9 +24,9 @@
   acf{
     cat_name
     category{
-        term_id
+        
         name
-        slug
+      
     }
   }
   }
