@@ -20,9 +20,8 @@
     allBlogPost {
       edges {
         node {
-          id
           title
-          author
+          slug
         }
       }
     }
