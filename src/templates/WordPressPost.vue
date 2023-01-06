@@ -1,36 +1,34 @@
 <template>
     <Layout>
-      <h1 v-html="edge in $page.wordpress.wordPressPost.title"/>
+      <h1 v-html="$page.wordPressPost.title"/>
       <img
-        v-if="edge in $page.wordpress.wordPressPost.featuredMedia"
-        :src="edge in $page.wordpress.wordPressPost.featuredMedia.sourceUrl"
-        :width="edge in $page.wordpress.wordPressPost.featuredMedia.mediaDetails.width"
-        :alt="edge in $page.wordpress.wordPressPost.featuredMedia.altText"
+        v-if="$page.wordPressPost.featuredMedia"
+        :src="$page.wordPressPost.featuredMedia.sourceUrl"
+        :width="$page.wordPressPost.featuredMedia.mediaDetails.width"
+        :alt="$page.wordPressPost.featuredMedia.altText"
       />
-      <div v-html="edge in $page.wordpress.wordPressPost.content"/>
-      <template v-if="edge in $page.wordpress.wordPressPost.categories.length">
+      <div v-html="$page.wordPressPost.content"/>
+      <template v-if="$page.wordPressPost.categories.length">
         <h4>Posted in</h4>
         <ul class="list categories">
-          <li v-for="category in $page.wordpress.wordPressPost.categories" :key="category.id" >
+          <li v-for="category in $page.wordPressPost.categories" :key="category.id" >
             <g-link :to="category.path">{{ category.title }}</g-link>
           </li>
         </ul>
       </template>
-      <template v-if="edge in $page.wordpress.wordPressPost.tags.length">
+      <template v-if="$page.wordPressPost.tags.length">
         <h4>Tags</h4>
         <ul class="list tags">
-          <li v-for="tag in $page.wordpress.wordPressPost.tags" :key="tag.id" >
+          <li v-for="tag in $page.wordPressPost.tags" :key="tag.id" >
             <g-link :to="tag.path">{{ tag.title }}</g-link>
           </li>
         </ul>
       </template>
-      <h2 v-html="edge in $page.apis.blogPost.id"/>
     </Layout>
   </template>
   
   <page-query>
-  query {
-    Wordpress: WordPressPost ($id: ID!) {
+  query WordPressPost ($id: ID!) {
     wordPressPost(id: $id) {
       title
       content
@@ -53,23 +51,13 @@
       }
     }
   }
-
-  Apis: Post ($path: String) {
-    blogPost (path: $path) {
-    id
-    acf{
-      cat_name
-    }
-    }
-    }
-}
   </page-query>
   
   <script>
   export default {
     metaInfo () {
       return {
-        title: this.$page.wordpress.wordPressPost.title
+        title: this.$page.wordPressPost.title
       }
     }
   }
