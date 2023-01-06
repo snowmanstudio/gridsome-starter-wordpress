@@ -2,8 +2,7 @@
     <layout>
       <g-link to="/">Back</g-link>
       <div style="padding-bottom: 20px;">
-        {{ $page.blogPost.title }}
-        <a target="_blank" :href="$page.blogPost.link">{{ $page.blogPost.link }}</a>
+        {{ $page.blogPost.acf.cat_name }}
       </div>
     </layout>
   </template>
@@ -19,9 +18,9 @@
   query Post ($path: String) {
   blogPost (path: $path) {
   id
-  path
-  title
-  link
+  acf{
+    cat_name
+  }
   }
   }
   

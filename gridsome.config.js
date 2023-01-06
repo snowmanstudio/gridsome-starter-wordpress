@@ -21,7 +21,7 @@ module.exports = {
     {
       use: 'gridsome-source-rest',
       options: {
-          endpoint: 'https://gist.githubusercontent.com/mklueh/ee707de96586f4b0776165facf9a5f00/raw/13291cecd49d8dcd072f9d252b25bf080e21f211/demo-posts-api.json'
+          endpoint: 'https://freehub.online/wp-json/acf/v3/posts'
           ,//'http://localhost:3000/posts',
           typeName: 'BlogPost'
       }
