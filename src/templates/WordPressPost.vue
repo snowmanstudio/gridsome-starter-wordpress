@@ -39,21 +39,6 @@ query WordPressPost ($id: ID!) {
   }
 }
 </page-query>
-<page-query>
-    query RelatedPosts {
-      allPost(filter:{id:{eq:"current-post-id"}}) {
-        edges {
-          node {
-            id
-            related{
-              id
-              path
-            }
-          }
-        }
-      }
-    }
-</page-query>
 
 <script>
 export default {
