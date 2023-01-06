@@ -23,7 +23,7 @@
     }
     }
     
-    </page-query>
+</page-query>
     
     <style scoped>
     </style>
