@@ -4,6 +4,9 @@
       <div style="padding-bottom: 20px;">
         {{ $page.blogPost.acf.cat_name }}
       </div>
+      <div style="padding-bottom: 20px;">
+            <g-link :to="category.slug">{{ $page.blogPost.acf.category.name }}</g-link>
+      </div>
     </layout>
   </template>
   
@@ -20,6 +23,11 @@
   id
   acf{
     cat_name
+    category{
+        term_id
+        name
+        slug
+    }
   }
   }
   }
