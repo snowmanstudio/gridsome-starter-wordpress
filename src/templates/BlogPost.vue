@@ -8,11 +8,15 @@
   </layout>
 </template>
 
-  <script>
-    export default {
-      name: "BlogPost"
+<script>
+  export default {
+    metaInfo () {
+      return {
+        slug: this.$page.blogPost.slug
+      }
     }
-</script>
+  }
+  </script>
 
 
 <page-query>
