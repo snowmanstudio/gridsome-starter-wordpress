@@ -5,7 +5,7 @@ module.exports = {
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
     WordPressPost: '/blog/:slug', // adds a route for the "post" post type (Optional)
-    BlogPost:'/:slug',
+    Article:'/:id',
   },
   plugins: [
     {
@@ -19,8 +19,8 @@ module.exports = {
     { 
       use: 'gridsome-source-rest',
       options: {
-        endpoint: 'https://freehub.online/wp-json/wp/v2/posts',
-        typeName: 'BlogPost',
+        endpoint: 'https://freehub.online/wp-json/acf/v3/posts',
+        typeName: 'Article',
       }
     }
   ]
