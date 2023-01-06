@@ -5,7 +5,7 @@
         {{ $page.blogPost.acf.cat_name }}
       </div>
       <div style="padding-bottom: 20px;">
-            <h3>{{ $page.blogPost.acf.category.name }}</h3>
+            <h3 v-for="edge in $page.blogPost.acf.category" :key="edge.category.term_id">{{ $edge.category.name }}</h3>
       </div>
     </layout>
   </template>
@@ -24,7 +24,7 @@
   acf{
     cat_name
     category{
-        
+        term_id
         name
       
     }
