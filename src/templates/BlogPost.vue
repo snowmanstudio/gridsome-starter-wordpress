@@ -16,13 +16,17 @@
 
 
 <page-query>
-    query Post ($path: String) {
-    blogPost (path: $path) {
-    title
-    slug
+  query {
+    allBlogPost {
+      edges {
+        node {
+          id
+          title
+          author
+        }
+      }
     }
-    }
-    
+  }
 </page-query>
     
     <style scoped>
