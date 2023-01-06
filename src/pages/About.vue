@@ -1,14 +1,62 @@
 <template>
   <Layout>
-    <h1>About me</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <h1>gridsome-source-rest example</h1>
+
+    <p>
+      This Example shows a simple implementation of the <a href="https://github.com/mklueh/gridsome-source-rest">gridsome-source-rest</a>
+      plugin.
+      Posts below are fetched from GitHub Gist or a Demo REST API in the /api directory.
+    </p>
+
+    <i>
+      {{ $static.metadata.settings.metaField }}
+    </i>
+
+    <div>
+      <ul>
+        <li v-for="post in $page.posts.edges">
+          <g-link :to="post.node.path">{{ post.node.title }}</g-link>
+        </li>
+      </ul>
+    </div>
   </Layout>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'About me'
+    title: 'gridsome-source-rest example'
   }
 }
 </script>
+
+<static-query>
+query{
+metadata{
+settings{
+metaField
+}
+}
+}
+</static-query>
+
+<page-query>
+query {
+posts:allBlogPost {
+edges {
+node {
+id
+path
+title
+}
+}
+}
+}
+
+</page-query>
+
+<style>
+.home-links a {
+  margin-right: 1rem;
+}
+</style>
