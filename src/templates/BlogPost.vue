@@ -3,7 +3,7 @@
       <g-link to="/">Back</g-link>
       <div style="padding-bottom: 20px;">
         {{ $page.blogPost.title }}
-        <a target="_blank" :href="$page.blogPost.link">{{ $page.blogPost.slug }}</a>
+        <h2>{{ $page.blogPost.slug }}</h2>
       </div>
     </layout>
   </template>
