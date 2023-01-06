@@ -19,7 +19,7 @@ module.exports = {
     { 
       use: 'gridsome-source-rest',
       options: {
-        endpoint: 'https://freehub.online/wp-json/acf/v3/posts',
+        endpoint: 'https://freehub.online/wp-json/wp/v2/posts',
         typeName: 'Article',
       }
     }
