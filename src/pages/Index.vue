@@ -8,6 +8,9 @@
       <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
         <Post :post="node" />
       </li>
+      <li v-for="post in $page.posts.edges">
+          <g-link :to="post.node.path">{{ post.node.title }}</g-link>
+        </li>
     </ul>
     <Pager :info="$page.allWordPressPost.pageInfo"/>
   </Layout>
@@ -38,6 +41,15 @@ query Home ($page: Int) {
       }
     }
   }
+  posts:allBlogPost {
+edges {
+node {
+id
+path
+title
+}
+}
+}
 }
 </page-query>
 
