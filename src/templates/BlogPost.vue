@@ -1,11 +1,19 @@
 <template>
-    <Layout>
-      <h1 v-html="$page.BlogPost.title"/>
-      <h2 v-html="$page.BlogPost.author"/>
-      <h2 v-html="$page.BlogPost.id"/>
-      </template>
-    </Layout>
+    <layout>
+      <g-link to="/">Back</g-link>
+      <div style="padding-bottom: 20px;">
+        {{ $page.blogPost.title }}
+        <a target="_blank" :href="$page.blogPost.link">{{ $page.blogPost.slug }}</a>
+      </div>
+    </layout>
   </template>
+
+  <script>
+    export default {
+      name: "BlogPost"
+    }
+</script>
+
 <page-query>
     query {
       allBlogPost {
@@ -13,18 +21,9 @@
           node {
             id
             title
-            author
+            content
           }
         }
       }
     }
 </page-query>
-<script>
-    export default {
-      metaInfo () {
-        return {
-          title: this.$page.BlogPost.title
-        }
-      }
-    }
-    </script>

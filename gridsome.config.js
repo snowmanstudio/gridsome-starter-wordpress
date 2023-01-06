@@ -1,11 +1,12 @@
 module.exports = {
   siteName: 'Gridsome',
+  siteUrl: 'https://gridsome-starter-wordpress.pages.dev',
   siteDescription: 'A WordPress starter for Gridsome',
 
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
     WordPressPost: '/:slug', // adds a route for the "post" post type (Optional)
-    BlogPost:'/:slug',
+    BlogPost:'/:title',
   },
   plugins: [
     {
@@ -17,10 +18,10 @@ module.exports = {
       }
     },
     {
-      use: "gridsome-source-rest",
+      use: 'gridsome-source-rest',
       options: {
-        endpoint: "https://sajidch.com/wp-json/wp/v2/posts",
-        typeName: "BlogPost",
+        endpoint: 'https://freehub.online/wp-json/wp/v2/posts',
+        typeName: 'BlogPost',
       }
     }
   ]
