@@ -7,7 +7,6 @@ module.exports = {
     WordPressPost: '/:slug', // adds a route for the "post" post type (Optional)
     BlogPost:'/blog/:slug',
   },
-
   plugins: [
     {
       use: '@gridsome/source-wordpress',
